@@ -2,6 +2,6 @@ This repository contains the source code for the models used for _DataStories_ t
 Task 6 “#HashtagWars: Learning a Sense of Humor”.
 
 At the moment the repository contains only the code for the models and _not_ a complete working example.
-You can find the Attention Layer's code in https://github.com/cbaziotis/keras-utilities/layers.py.
+You can find the Attention Layer's code in https://github.com/cbaziotis/keras-utilities/blob/master/layers.py.
 
 I will upload a complete end-to-end example soon.
