@@ -2,9 +2,15 @@ from keras.engine import Input
 from keras.engine import Model
 from keras.engine import merge
 from keras.layers import Dense, LSTM, MaxoutDense, Dropout, GaussianNoise, Convolution1D, GlobalMaxPooling1D, Flatten, \
-    TimeDistributed
+    TimeDistributed, Bidirectional, Embedding
 from keras.optimizers import Adam
 from keras.regularizers import l2
+from kutilities.layers import AttentionWithContext
+from sklearn import preprocessing
+
+'''
+DNN Models for Task 6 - Subtask A
+'''
 
 
 def embeddings_layer(max_length, embeddings, trainable=False, masking=False, scale=False, normalize=False):
