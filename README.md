@@ -30,7 +30,7 @@ This project contains the complete source code for training a NN model
 for SemEval-2017 Task 6 “#HashtagWars: Learning a Sense of Humor” and 
 the trained model that was used for our final submission. 
 
-#####Notes
+**Notes**
 
 * If what you are interested in is just the source code for the model then just see 
 [models/task6A_models.py](https://github.com/cbaziotis/datastories-semeval2017-task6/blob/master/models/task6A_models.py).
