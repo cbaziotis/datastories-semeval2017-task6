@@ -156,8 +156,7 @@ class SemEval2017Task6:
             twts += len(hashtag_data)
             tweets[fname] = self._create_pairwise_data(hashtag_data)
 
-        # return tweets
-        return {k: tweets[k] for k in list(tweets.keys())[:20]}
+        return tweets
 
     def get_all_training_data_task_1(self):
         """

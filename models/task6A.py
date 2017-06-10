@@ -37,7 +37,7 @@ SEMEVAL_GOLD = False
 ############################################################################
 # if True save model checkpoints, as well as the corresponding word indices
 # you HAVE tp set PERSIST = True, in order to be able to use the trained model later
-PERSIST = False
+PERSIST = True
 best_model = lambda: "cp_model_task6_sub{}.hdf5".format(TASK)
 best_model_word_indices = lambda: "cp_model_task6_sub{}_word_indices.pickle".format(TASK)
 

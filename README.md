@@ -42,7 +42,7 @@ the trained model that was used for our final submission.
 #### Word Embeddings
 In order to specify which word embeddings file you want to use, 
 you have to set the values of `WV_CORPUS` and `WV_WV_DIM` in `task6A.py` and `task6A_LOO.py` respectively.
-In our submission we used:
+The default values are:
 ```python
 WV_CORPUS = "datastories.twitter"
 WV_DIM = 300
@@ -73,6 +73,15 @@ models
 **Semeval 2017 Task6A**: For training a model for Semeval 2017 Task6A, then you have to run `task6A.py`. 
 Read the source code and configure the program using the corresponding flags.
 
+If running with flag `PERSIST=True` then the checkpointing will be ON. 
+This means that the model weight with the word indices will be saved to disk:
+```
+models/cp_model_task6_sub1.hdf5
+models/cp_model_task6_sub1_word_indices.pickle
+```
+Usually after 1 or 2 epochs the network will start to overfit so you can just stop the execution.
+
+
 **#HashtagWars evaluation**: 
 In order to test our model using the evaluation method (Leave-One-Out cross validation) in 
 Potash et al. "# HashtagWars: Learning a Sense of Humor." arXiv:[1612.03216](https://arxiv.org/abs/1612.03216),
@@ -82,3 +91,15 @@ Read the source code and configure the program using the corresponding flags.
 The program will save the results of each run and place them in `/models/results/`.
 You can evaluate those results by running `/models/results/results_loo.py`.
 
+
+#### Generate submissions
+The `submissions/` folder contains a trained model with the corresponding word indices and the generated submission files.
+If you want to generate new submissions for the SemEval test set, 
+just train a model with `task6A.py` and move the files 
+```
+models/cp_model_task6_sub1.hdf5
+models/cp_model_task6_sub1_word_indices.pickle
+```
+to the `submissions/` folder. 
+
+You can generate new submissions and evaluate the performance of a model with `submissions/submit_task6_1.py`.
