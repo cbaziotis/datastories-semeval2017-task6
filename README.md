@@ -1,7 +1,7 @@
 ## Overview
 This repository contains the source code for the models used for _DataStories_ team's submission
 for [SemEval-2017 Task 6 “#HashtagWars: Learning a Sense of Humor”](http://alt.qcri.org/semeval2017/task6/).
-The model is described in the paper "SemEval-2017 Task 6: Siamese LSTM with Attention for Humorous Text Comparison"
+The model is described in the paper ["SemEval-2017 Task 6: Siamese LSTM with Attention for Humorous Text Comparison"](http://nlp.arizona.edu/SemEval-2017/pdf/SemEval065.pdf).
 
 Citation:
 ```
