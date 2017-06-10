@@ -1,5 +1,29 @@
-This repository contains the source code for the models used for _DataStories_ team's submission 
-for SemEval-2017 Task 6 “#HashtagWars: Learning a Sense of Humor”.
+## Overview
+This repository contains the source code for the models used for _DataStories_ team's submission
+for [SemEval-2017 Task 6 “#HashtagWars: Learning a Sense of Humor”](http://alt.qcri.org/semeval2017/task6/).
+The model is described in the paper "SemEval-2017 Task 6: Siamese LSTM with Attention for Humorous Text Comparison"
+
+Citation:
+```
+@InProceedings{baziotis-pelekis-doulkeridis:2017:SemEval1,
+  author    = {Baziotis, Christos  and  Pelekis, Nikos  and  Doulkeridis, Christos},
+  title     = {DataStories at SemEval-2017 Task 6: Siamese LSTM with Attention for Humorous Text Comparison},
+  booktitle = {Proceedings of the 11th International Workshop on Semantic Evaluation (SemEval-2017)},
+  month     = {August},
+  year      = {2017},
+  address   = {Vancouver, Canada},
+  publisher = {Association for Computational Linguistics},
+  pages     = {381--386}
+}
+```
+
+**Notes**
+
+* If what you are just interested in the source code for the model then just see 
+[models/task6A_models.py](https://github.com/cbaziotis/datastories-semeval2017-task6/blob/master/models/task6A_models.py).
+
+* The models were trained using Keras 1.2. In order for the project to work with Keras 2 some minor changes will have to be made.
+
 
 
 ## Prerequisites
@@ -24,19 +48,7 @@ You can download one of the following word embeddings:
 Place the file(s) in `/embeddings` folder, for the program to find it.
 
 
-## Overview
-
-This project contains the complete source code for training a NN model 
-for SemEval-2017 Task 6 “#HashtagWars: Learning a Sense of Humor” and 
-the trained model that was used for our final submission. 
-
-**Notes**
-
-* If what you are interested in is just the source code for the model then just see 
-[models/task6A_models.py](https://github.com/cbaziotis/datastories-semeval2017-task6/blob/master/models/task6A_models.py).
-
-* The models were trained using Keras 1.2. In order for the project to work with Keras 2 some minor changes will have to be made.
-
+## Execution
 
 
 #### Word Embeddings
@@ -74,7 +86,7 @@ models
 Read the source code and configure the program using the corresponding flags.
 
 If running with flag `PERSIST=True` then the checkpointing will be ON. 
-This means that the model weight with the word indices will be saved to disk:
+This means that the model weights with the corresponding word indices will be saved to disk:
 ```
 models/cp_model_task6_sub1.hdf5
 models/cp_model_task6_sub1_word_indices.pickle
