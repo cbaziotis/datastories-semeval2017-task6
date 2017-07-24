@@ -37,7 +37,7 @@ SEMEVAL_GOLD = False
 ############################################################################
 # if True save model checkpoints, as well as the corresponding word indices
 # you HAVE tp set PERSIST = True, in order to be able to use the trained model later
-PERSIST = True
+PERSIST = False
 best_model = lambda: "cp_model_task6_sub{}.hdf5".format(TASK)
 best_model_word_indices = lambda: "cp_model_task6_sub{}_word_indices.pickle".format(TASK)
 
@@ -86,11 +86,13 @@ metrics = {
 
 _callbacks = []
 
-metrics_callback = MetricsCallback(
-    training_data=(training[0], training[1]),
-    validation_data=(validation[0], validation[1]) if not FINAL else (testing[0], testing[1]),
-    test_data=(testing[0], testing[1]) if not FINAL else None,
-    metrics=metrics)
+_datasets = {}
+_datasets["1-train"] = (training[0], training[1])
+_datasets["2-val"] = (validation[0], validation[1]) if not FINAL else (testing[0], testing[1])
+if not FINAL:
+    _datasets["3-test"] = (testing[0], testing[1]) if not FINAL else None
+
+metrics_callback = MetricsCallback(datasets=_datasets, metrics=metrics)
 
 _callbacks.append(metrics_callback)
 _callbacks.append(PlottingCallback(grid_ranges=(0.5, 1.), height=4))
@@ -103,6 +105,7 @@ if PERSIST:
 history = nn_model.fit(training[0], training[1],
                        validation_data=(validation[0], validation[1]) if not FINAL else (testing[0], testing[1]),
                        nb_epoch=15, batch_size=256,
+                       verbose=1,
                        callbacks=_callbacks)
 
 pickle.dump(history.history, open("hist.pickle", "wb"))
