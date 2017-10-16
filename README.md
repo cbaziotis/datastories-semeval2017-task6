@@ -17,6 +17,11 @@ Citation:
 }
 ```
 
+
+![Siamese-LSTM](task6-1.png)
+*A higl-level overview of the model for SubTask A.*
+
+
 **Notes**
 
 * If what you are just interested in the source code for the model then just see 

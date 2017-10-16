@@ -47,7 +47,7 @@ best_model_word_indices = lambda: "cp_model_task6_sub{}_word_indices.pickle".for
 embeddings, word_indices = get_embeddings(corpus=WV_CORPUS, dim=WV_DIM)
 
 if PERSIST:
-    pickle.dump(word_indices, open(best_model_word_indices(), 'wb'))
+    pickle.dump(word_indices, )
 
 loader = Task6Loader(word_indices, text_lengths=(text_length, text_length), subtask=TASK, y_one_hot=False,
                      own_vectors=WV_CORPUS.startswith("own"))
